@@ -1,0 +1,29 @@
+<h2>Dashboard</h2>
+
+<h3>Create Task</h3>
+
+<input id="title" placeholder="title">
+<input id="desc" placeholder="description">
+<input id="pay" placeholder="payment">
+
+<button onclick="create()">Post Task</button>
+
+<script>
+
+function create(){
+
+fetch("/task",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({
+title:title.value,
+description:desc.value,
+payment:pay.value
+})
+})
+
+alert("Task posted")
+
+}
+
+</script>
